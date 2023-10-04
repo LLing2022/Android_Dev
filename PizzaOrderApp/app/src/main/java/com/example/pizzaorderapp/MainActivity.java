@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void showAmount() {
-        //test for git push
+        //test for git push 01
     }
 
     private void showAll() {
