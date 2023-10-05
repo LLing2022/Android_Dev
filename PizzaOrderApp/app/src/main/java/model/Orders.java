@@ -1,6 +1,9 @@
 package model;
+//import android.annotation.NonNull;
 
-public class Orders {
+import java.io.Serializable;
+
+public class Orders implements Serializable {
 
     private int clNumber;
     private  String pizzaType;
@@ -36,21 +39,43 @@ public class Orders {
         this.nbSlices = nbSlices;
     }
 
+
     public String toString(){
-        return clNumber + "\t" + nbSlices + "\t" + getAmount();
+        return clNumber + "  \t" + pizzaType + "  \t" + nbSlices + "  \t" + getAmount(pizzaType, nbSlices);
     }
 
-    private float getAmount() {
-        float amount = 0;
-        if(pizzaType.equals("Vegen"))
-            amount = nbSlices * 2.5f;
-        else
-            if(pizzaType.equals("Cheese"))
-                amount = nbSlices * 2.0f;
-            else
-                if(pizzaType.equals("Mexico"))
-                    amount = nbSlices * 2.4f;
+    public static float getAmount(String pizzaType, int nbSlices) {
+//        float amount = 0;
+//        if(pizzaType.equals("Vegen"))
+//            amount = nbSlices * 2.5f;
+//        else
+//            if(pizzaType.equals("Cheese"))
+//                amount = nbSlices * 2.0f;
+//            else
+//                if(pizzaType.equals("Mexico"))
+//                    amount = nbSlices * 2.4f;
+//
+//        return amount;
 
-        return amount;
+        try{
+
+            return  getPrice(pizzaType) * nbSlices;
+        }catch (Exception e){
+            return  -1;
+        }
     }
+
+    public static float getPrice(String pizzaType) throws Exception {
+        float price = 0f;
+        if(pizzaType.equals("Vegen")){
+            price = 2.5f;
+        } else if (pizzaType.equals("Cheese")) {
+            price = 2.0f;
+        } else if (pizzaType.equals("Mexico")) {
+            price = 2.4f;
+        }else
+            throw new Exception("Please select Pizza Type");
+        return price;
+    }
+
 }

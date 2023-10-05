@@ -132,7 +132,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@id/tvClNumber"
         android:textAllCaps="false"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="150dp"
         />
 
     <Button
