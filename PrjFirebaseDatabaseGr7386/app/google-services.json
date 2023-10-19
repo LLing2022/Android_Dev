@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "564563835847",
+    "firebase_url": "https://prjlingoct19-default-rtdb.firebaseio.com",
+    "project_id": "prjlingoct19",
+    "storage_bucket": "prjlingoct19.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:564563835847:android:83034b74cffd43d35337e2",
+        "android_client_info": {
+          "package_name": "com.example.prjfirebasedatabasegr7386"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC959w84qSvx4SLhgudrXa54NMl9q4J34E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
