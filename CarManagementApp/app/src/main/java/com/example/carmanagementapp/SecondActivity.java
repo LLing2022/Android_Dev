@@ -25,7 +25,15 @@ import model.Car;
 public class SecondActivity extends AppCompatActivity implements View.OnClickListener, ValueEventListener {
     Button btnFinish;
     TextView tvCarInfo;
-    DatabaseReference carsReference = FirebaseDatabase.getInstance().getReference().child("cars");
+    /*
+    - FirebaseDatabase.getInstance(): This part of the code is used to get an instance of the Firebase Realtime Database. FirebaseDatabase is a class in the Firebase SDK
+    that provides access to the Firebase Realtime Database. getInstance() is a method used to obtain a reference to the Firebase Database instance that your app is configured to use.
+    - getReference(): Once you have an instance of the Firebase Database, you can call the getReference() method to get a reference to the root of the database.
+     This is the starting point from which you can access and manipulate data in the database.
+    - child("cars"): This part of the code is used to specify a child location within the database. In this case, it's specifying a child node called "cars."
+     This means that you want to access or manipulate data under the "cars" node in the database. In Firebase Realtime Database, data is structured as a JSON tree, so you can have various nodes and sub-nodes, and this line of code allows you to access the "cars" node.
+     */
+    DatabaseReference carsReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,7 +46,6 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         btnFinish = findViewById(R.id.btnFinish);
         btnFinish.setOnClickListener(this);
         carsReference = FirebaseDatabase.getInstance().getReference().child("Car");
-
         // Add a listener to retrieve data
         carsReference.addValueEventListener(this);
     }
@@ -81,8 +88,7 @@ public class SecondActivity extends AppCompatActivity implements View.OnClickLis
         }
 
         // Display the car list in a TextView
-        TextView textView = findViewById(R.id.tvCarInfo); // Replace with your TextView ID
-        textView.setText(carListString.toString());
+        tvCarInfo.setText(carListString.toString());
     }
 
     @Override

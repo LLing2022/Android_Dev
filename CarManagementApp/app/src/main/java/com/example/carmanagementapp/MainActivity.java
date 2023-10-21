@@ -132,6 +132,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void listCars(View view) {
+        //intent uses for pass "messages"
         Intent intent = new Intent(MainActivity.this, SecondActivity.class);
         startActivity(intent);
     }
@@ -139,6 +140,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+        //DataSnapshot uses for get data from firebase database
         if(snapshot.exists()){
             String brand = snapshot.child("brand").getValue().toString();
             if(brand.equals("Toyota")){
