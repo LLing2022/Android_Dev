@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    >
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Manipulate Cars"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/tvId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Car id:"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="30dp"
+        />
+
+    <EditText
+        android:id="@+id/edId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="6"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintLeft_toRightOf="@id/tvId"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvId"
+        android:layout_marginLeft="30dp"
+
+        />
+    <TextView
+        android:id="@+id/tvBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Brand : "
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/tvId"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"
+        />
+
+    <RadioGroup
+        android:id="@+id/rgBrand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/edId"
+        app:layout_constraintLeft_toRightOf="@id/tvBrand"
+        android:layout_marginLeft="30dp"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rbToyota"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Toyota"
+            />
+
+        <RadioButton
+            android:id="@+id/rbMazda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mazda"
+            android:layout_marginStart="10sp"
+            />
+
+        <RadioButton
+            android:id="@+id/rbHyundai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hyundai"
+            android:layout_marginStart="10sp"
+            />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status(New/Used) : "
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/tvBrand"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"
+        />
+
+    <CheckBox
+        android:id="@+id/ckStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(Check If Is A New Car)"
+        app:layout_constraintTop_toBottomOf="@id/rgBrand"
+        app:layout_constraintLeft_toRightOf="@id/tvStatus"
+        android:layout_marginLeft="30dp"/>
+
+
+    <TextView
+        android:id="@+id/tvPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price : "
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/tvStatus"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="20dp"
+        />
+
+    <EditText
+        android:id="@+id/edPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="6"
+        android:inputType="textPersonName"
+        android:text=""
+        app:layout_constraintTop_toBottomOf="@id/ckStatus"
+        app:layout_constraintLeft_toRightOf="@id/tvId"
+        android:layout_marginLeft="30dp"
+        />
+
+    <Button
+        android:id="@+id/btnAdd"
+        android:layout_width="69dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="100dp"
+        android:text="Add"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvPrice"
+        android:textSize="10dp"
+        />
+
+    <Button
+        android:id="@+id/btnUpdate"
+        android:layout_width="89dp"
+        android:layout_height="41dp"
+        android:text="Update"
+        app:layout_constraintLeft_toRightOf="@id/btnAdd"
+        app:layout_constraintTop_toBottomOf="@id/tvPrice"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="10dp"/>
+
+    <Button
+        android:id="@+id/btnRemove"
+        android:layout_width="89dp"
+        android:layout_height="41dp"
+        android:text="Remove"
+        app:layout_constraintLeft_toRightOf="@id/btnUpdate"
+        app:layout_constraintTop_toBottomOf="@id/tvPrice"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="10dp"/>
+
+    <Button
+        android:id="@+id/btnFind"
+        android:layout_width="69dp"
+        android:layout_height="41dp"
+        android:text="Find"
+        app:layout_constraintLeft_toRightOf="@id/btnRemove"
+        app:layout_constraintTop_toBottomOf="@id/tvPrice"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="5dp"
+        android:textSize="10dp"
+        />
+
+    <Button
+        android:id="@+id/btnList"
+        android:layout_width="69dp"
+        android:layout_height="41dp"
+        android:text="List"
+        app:layout_constraintLeft_toRightOf="@id/btnFind"
+        app:layout_constraintTop_toBottomOf="@id/tvPrice"
+        android:layout_marginTop="100dp"
+        android:textSize="10dp"
+        app:layout_constraintRight_toRightOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
